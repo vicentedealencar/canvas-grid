@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -14,7 +14,6 @@
         <meta name="viewport" content="width=device-width">
 
         <title>Canvas Grid</title>
-        
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -26,17 +25,6 @@
         Your browser does not support the HTML5 canvas tag.
         </canvas>
 
-        <script src="js/vendor/watch.js"></script>
-        <script src="js/canvas-grid.js"></script>
-
-        <script>
-            var grid = [
-                ["#FF0000", "blue", "rgb(0,255,0)"],
-                ["#333", "#888", "#ddd"],
-                ["#333", "#000", "#ddd"],
-                ["#333", "#888", "#700"],
-            ];
-            var cg = new CanvasGrid("myCanvas", grid);
-        </script>
+        <script data-main="js/main" src="js/require.js"></script>
     </body>
 </html>
