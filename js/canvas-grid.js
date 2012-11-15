@@ -1,5 +1,5 @@
 define(["watch"], function (WatchJs) {
-    var CanvasGrid = function (canvasId, dataMatrix) {
+    return function (canvasId, dataMatrix) {
 
 		var c = document.getElementById(canvasId);
 	    var ctx = c.getContext("2d");
@@ -34,5 +34,4 @@ define(["watch"], function (WatchJs) {
 			return w;
 		}
 	}
-	return CanvasGrid;
 });
