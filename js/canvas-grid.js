@@ -1,5 +1,6 @@
-define([], function () {
-		var CanvasGrid = function (canvasId, dataMatrix) {
+define(["watch"], function (WatchJs) {
+    var CanvasGrid = function (canvasId, dataMatrix) {
+
 		var c = document.getElementById(canvasId);
 	    var ctx = c.getContext("2d");
 
@@ -19,6 +20,10 @@ define([], function () {
 			}
 	    }
 	    draw();
+
+	    WatchJs.watch(dataMatrix, function () {
+	        draw();
+	    });
 
 	    function matrixWidth() {
 			var w = 0;
