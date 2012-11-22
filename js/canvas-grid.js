@@ -1,37 +1,36 @@
-define(["watch"], function (WatchJs) {
-    return function (canvasId, dataMatrix) {
+function canvasGrid (canvasId, dataMatrix) {
 
-		var c = document.getElementById(canvasId);
-	    var ctx = c.getContext("2d");
+	var c = document.getElementById(canvasId);
+	var ctx = c.getContext("2d");
 
-	    function draw() {
-			var mHeight = dataMatrix.length;
-			var mWidth = matrixWidth();
-			var cellHeight = c.height / mHeight;
-			var cellWidth = c.width / mWidth;
+	function draw() {
+		var mHeight = dataMatrix.length;
+		var mWidth = matrixWidth();
+		var cellHeight = c.height / mHeight;
+		var cellWidth = c.width / mWidth;
 
-			for(var i in dataMatrix)
+		for(var i in dataMatrix)
+		{
+			for (var j in dataMatrix[i])
 			{
-				for (var j in dataMatrix[i])
-				{
-					ctx.fillStyle = dataMatrix[i][j];
-					ctx.fillRect(j * cellWidth, i * cellHeight, cellWidth, cellHeight);
-				}
+				ctx.fillStyle = dataMatrix[i][j];
+				ctx.fillRect(j * cellWidth, i * cellHeight, cellWidth, cellHeight);
 			}
-	    }
-	    draw();
-
-	    WatchJs.watch(dataMatrix, function () {
-	        draw();
-	    });
-
-	    function matrixWidth() {
-			var w = 0;
-	    	for (var i in dataMatrix) {
-	    		if(w < dataMatrix[i].length)
-	    			w = dataMatrix[i].length;
-	    	};
-			return w;
 		}
 	}
-});
+	draw();
+
+	//Object.observe(dataMatrix, function () {
+	watch(dataMatrix, function () {
+		draw();
+	});
+
+	function matrixWidth() {
+		var w = 0;
+		for (var i in dataMatrix) {
+			if(w < dataMatrix[i].length)
+				w = dataMatrix[i].length;
+		};
+		return w;
+	}
+}
