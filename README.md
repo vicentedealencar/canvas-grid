@@ -2,6 +2,12 @@
 
 Canvas Grid is what you were looking for if you dont like messing with UI very much. With it you can mess around with your data matrix and let Canvas Grid handle the UI representation of it.
 
+## Demos
+
+[First Demo](http://vicentedealencar.github.com/canvas-grid/demo-1.html): random cell is red
+
+[Second Demo](http://vicentedealencar.github.com/canvas-grid/demo-2.html): cell movving in random directions
+
 ## Getting Started
 
 Include Canvas Grid and [Watch.js](https://github.com/melanke/Watch.JS):
